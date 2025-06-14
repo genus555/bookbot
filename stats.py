@@ -14,3 +14,16 @@ def count_characters(content):
         elif character != " " and character in chars:
             chars[character] += 1
     return chars
+
+def sort_on(dict):
+    return dict["num"]
+
+def sort_characters(chars):
+    sorted_chars = []
+    for character in chars:
+        curr_char = {}
+        curr_char["char"] = character
+        curr_char["num"] = chars[character]
+        sorted_chars.append(curr_char)
+    sorted_chars.sort(reverse=True, key=sort_on)
+    return sorted_chars
